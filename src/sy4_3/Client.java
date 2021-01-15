@@ -1,0 +1,13 @@
+package sy4_3;
+
+public class Client {
+    public static void main(String[] args) {
+        User user;
+        UserDAO userDAO = new UserDAO();
+        int permission = userDAO.findPermission("zhangsan","123456");
+        System.out.println("zhangsan正在登录");
+        user =  UserFactory.getUser(permission);
+        user.sameOperation();
+        user.diffOperation();
+    }
+}
